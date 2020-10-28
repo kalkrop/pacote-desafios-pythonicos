@@ -13,9 +13,23 @@ Dica: s.replace(stra, strb) retorna uma versão da string s
 onde todas as instancias de stra foram substituidas por strb.
 """
 
+
 def fix_start(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    novapalavra = ''
+
+    if s[0] in s[1:]:
+        novapalavra = s[0]
+        for i in range(1, len(s)):
+            if s[0] == s[i]:
+                novapalavra += '*'
+            else:
+                novapalavra += s[i]
+    else:
+        return s
+    return novapalavra
+    # Por: GustavoBPereira
+    # return ''.join([letra if letra != s[0] or index == 0 else '*' for index, letra in enumerate(s)])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
