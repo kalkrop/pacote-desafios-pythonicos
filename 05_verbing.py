@@ -10,9 +10,10 @@ Se o tamanho da string for menor que 3, não altere nada.
 Retorne o resultado da string.
 """
 
+
 def verbing(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    return (''.join([s if len(s) < 3 else s[:]+'ly' if s[-3:] == 'ing' else s[:]+'ing' if len(s) >= 3 else s]))
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
