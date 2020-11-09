@@ -10,9 +10,20 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
+
+
 def front_back(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+
+    def separando_letras(s):
+        if len(s) % 2 == 0:
+            frente, atras = s[:int((len(s)/2))], s[-int((len(s)/2)):]
+        else:
+            frente, atras = s[:int((len(s)/2))+1], s[-int((len(s)/2)):]
+        return frente, atras
+    frente_a, atras_a = separando_letras(a)
+    frente_b, atras_b = separando_letras(b)
+    return frente_a+frente_b+atras_a+atras_b
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
